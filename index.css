@@ -28,7 +28,6 @@ body {
 
 .wrapper {
     font-size: 4rem;
-    overflow: hidden;
     background-color: black;
     position: absolute;
     font-style: italic;
@@ -40,8 +39,9 @@ p {
 }
 
 .marquee-text {
-    overflow: hidden;
+
     color: white;
+
 }
 
 .marquee-text-track,
@@ -51,6 +51,8 @@ p {
     padding-left: 4rem;
     width: max-content;
     animation: marquee-move-text 15s linear infinite;
+
+
 }
 
 .marquee-text-track-bottom {

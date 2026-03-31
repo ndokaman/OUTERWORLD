@@ -42,22 +42,22 @@ const fragmentShader = `
 `;
 
 const uniforms = {
-    u_time: { value: 0.0 },
-    u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+  u_time: { value: 0.0 },
+  u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
 };
 
 const material = new THREE.ShaderMaterial({
 
-    fragmentShader: fragmentShader,
-    uniforms: uniforms
+  fragmentShader: fragmentShader,
+  uniforms: uniforms
 });
 
 const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 //
 window.addEventListener('resize', () => {
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
 });
 
 // u_time.value ties naimation speed to frame rate, not elapsed time.
@@ -67,10 +67,9 @@ window.addEventListener('resize', () => {
 const clock = new THREE.Clock();
 
 function animate() {
-    requestAnimationFrame(animate);
-    uniforms.u_time.value = clock.getElapsedTime(); // REAL seconds not frame count
-    renderer.render(scene, camera);
+  requestAnimationFrame(animate);
+  uniforms.u_time.value = clock.getElapsedTime(); // REAL seconds not frame count
+  renderer.render(scene, camera);
 }
 animate();
-
 
