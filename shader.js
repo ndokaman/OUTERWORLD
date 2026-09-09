@@ -1,7 +1,9 @@
 const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 const renderer = new THREE.WebGLRenderer();
+
 const page = document.getElementById("shader-bg");
+
 renderer.setSize(window.innerWidth, window.innerHeight);
 page.appendChild(renderer.domElement);
 
